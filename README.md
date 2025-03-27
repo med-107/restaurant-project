@@ -1,2 +1,2 @@
-# restaurent-project
-a moroccan traditional food restaurent
+# restaurant-project
+a moroccan traditional food restaurant
