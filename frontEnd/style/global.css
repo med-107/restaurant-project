@@ -1,0 +1,465 @@
+@font-face {
+    font-family: 'garet';
+    src: url('../font/Garet-Book.woff2') format('woff2'),
+         url('../font/Garet-Book.woff') format('woff');
+}
+
+*{
+    font-family: 'garet', sans-serif;
+}
+
+/* global */
+::selection{
+    background-color: rgb(104, 104, 255);
+}
+
+
+/* nav component */
+nav{
+    position: relative;
+}
+
+nav ul{
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+    list-style-type: none;
+    height: 50px;
+    background-color: #8B4513;
+    padding: 0px 20px;
+}
+
+nav ul li{
+    position: relative;
+    z-index: 1;
+}
+
+#ddd{
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+#login{
+    cursor: pointer;
+}
+
+nav ul .s::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background-color: #bd5f1c;
+    transition-duration: 0.4s;
+    z-index: -1;
+}
+
+nav ul .s:hover::before{
+    width: 100%;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+#ddd{
+    width: 100px;
+    align-self: flex-start;
+
+}
+
+/* home component */
+
+.hero {
+    position: relative;
+}
+
+.hero .over-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.6);
+}
+
+.over-img .text{
+    display: block;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    white-space: pre;
+}
+
+.over-img .btn{
+    position: relative;
+    top: 7%;
+    background-color: #FFA500;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    padding: 4px;
+    height: 35px; 
+    width: 130px;/*130px*/
+    cursor: pointer;
+}
+
+.over-img .btn:hover{
+    background-color: #ffae19;
+}
+
+.dish-example{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 15px;
+    padding: 40px 50px;
+    background-color: #f5f5dc;
+}
+
+.dish-example .card{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 25px;
+    padding: 20px 10px;
+    z-index: 1;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card:hover{ 
+    box-shadow: black 3px 3px 10px;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+.card:hover::before{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card .title , .card .price{
+    color: #8B0000;
+    font-size: 1.2em;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.card .desciption{
+    color: #654321 ;
+    visibility: hidden;
+    font-size: 1.2em;
+}
+
+.card .btn{
+    position: absolute;
+    bottom: 10%;
+    align-self: center;
+    background-color: #8B4513;
+    border-radius: 15px;
+    width: 130px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    visibility: hidden;
+}
+
+.card .btn:hover{
+    cursor: pointer;
+    background-color: #ffa6009b;
+}
+
+.card:hover .title, .card:hover .btn, .card:hover .desciption, .card:hover .price{
+    visibility: visible;
+}
+
+
+/* book component */
+
+form{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-70%);
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #D2B48C;
+    width: 300px;
+    padding: 20px 30px;
+}
+
+form input, textarea{
+    width: 90%;
+    height: 25px;
+    border: 3px #8B4513 solid;
+    padding: 2px 5px;
+}
+
+form select{
+    width: 96%;
+    height: 35px;
+    border: 3px #8B4513 solid;
+}
+
+form label{
+    color: #654321;
+    font-weight: bold;
+}
+
+form input:focus ,form select:focus, textarea:focus{
+    all: unset;
+    width: 90%;
+    height: 25px;
+    border: 3px #8B4513 solid;
+    padding: 2px 5px;
+}
+
+.submitBtn{
+    all: unset;
+    background-color: #8B4513;
+    color: white;
+    width: 120px;
+    font-weight: bold;
+    padding: 5px 5px;
+    align-self: center;
+}
+
+.submitBtn:hover{
+    cursor: pointer;
+    background-color: #c4621d;
+}
+
+.submitBtn:focus{
+    all: unset;
+    background-color: #8B4513;
+    width: 120px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 5px;
+    align-self: center;
+}
+
+/* cart */
+
+
+.empty{
+    color: #712f00;
+    font-size: 6em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.empty::after{
+    content: ' :-(';
+}
+
+.cItems{
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.cItems .cItemImg{
+    width: 100px;
+}
+
+.cItemImg img{
+    width: 100%;
+    height: 80px;
+}
+
+.cItems .cItemDetails{
+    background-color: #f5f5dc;
+    width: 600px;
+    padding: 10px 30px;
+}
+
+.cItemDetails .detailsTitle{
+    color: #8B0000;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.cItemDetails .detailsDescription{
+    font-size: 1.2em;
+}
+
+.detailsDescription .itemPrice{
+    color: #8B0000;
+    font-weight: bolder;
+}
+
+.btnSection{
+    background-color: #f5f5dc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 180px;
+    padding: 10px;
+}
+
+.btnSection .remove button{
+    border: none;
+    background-color: #c4621d;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.remove button:hover{
+    background-color: #e3711f;
+    cursor: pointer;
+}
+
+.btnSection .quantity{
+    white-space: pre;
+}
+
+.quantity button{
+    /* width: 20px; */
+    height: 30px;
+    font-weight: bold;
+    border: none;
+}
+
+.quantity button:hover{
+    background-color: silver;
+    cursor: pointer;
+}
+
+.quantity .reset{
+    width: 100%;
+}
+
+
+/* about component */
+
+
+.about{
+    width: 70%;
+    margin-top: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about p, .contact p{
+    color: #8B0000;
+    font-size: 1.1em;
+    position: relative;
+    transition-duration: 0.3s;
+}
+
+.about p:hover{
+    transform: translateX(10px);
+}
+
+.about p::before{
+    position: absolute;
+    top: 45%;
+    left: -15px;
+    content: '';
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 0; /* Adjust thickness and size as needed */
+    border-color: transparent black transparent  transparent; 
+    transform: rotate(45deg);
+    visibility: hidden;
+    transition-duration: 0.3s;
+}
+
+.about p:hover::before{
+    visibility: visible;
+}
+
+
+/* contact component */
+
+
+.contact {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+    width: 50%;
+}
+
+.contact p span{
+    color: rgb(147, 20, 20);
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+
+/* footer component */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #654321;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 100%;
+    height: 70px;
+    position: relative;
+    bottom: 0;
+}
+
+footer div i{
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.3s;
+}
+
+footer div i::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #FFA500;
+    z-index: -1;
+    transition-duration: 0.4s;
+}
+
+footer div i:hover::before{
+    width: 100%;
+}
+
+footer div i:hover{
+    color: black;
+}

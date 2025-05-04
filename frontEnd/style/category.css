@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'garet'; 
+    src: url('../font/Garet-Book.woff2') format('woff2'),
+         url('../font/Garet-Book.woff') format('woff'); 
+}
+
+*{
+    font-family: 'garet', sans-serif;
+}
+
+button{
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: pointer;
+}
+
+.hover:hover{
+    background-color: silver;
+}
+
+#tabs{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    border: 1px black solid;
+    border-radius: 17px;
+    max-width: 234px;
+    padding: 2px;
+    align-self: center;
+    background-color: #e5e5e5;
+}
+
+#content{
+    width: 100px;
+    height: 100px;
+    color: black;
+    background-color: red;
+}
+
+#tab1, #tab2, #tab3{
+    display: none; 
+    padding: 20px;
+    border: 1px solid black;
+    min-width: 300px;
+    color: black;
+}
+
+.selected{
+    background-color: rgb(236, 200, 0);
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}

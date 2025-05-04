@@ -1,0 +1,35 @@
+#reservationContainer{
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    width: calc(100vw - 240px);
+    height: calc(100% - 60px);
+    background-color: #e5e5e5;
+    #reservationTable{
+        width: 90%;
+        height: fit-content;
+        border: none;
+        border-collapse: collapse;
+        line-height: 2em;
+        th{
+            color: #902124;
+            font-weight: bold;
+            border: none;
+            border-bottom: 2px solid #654320;
+        }
+        td{
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid #654320;
+            overflow: visible;
+            #cancel{
+                position: relative;
+            }
+            #cancel:hover{
+                cursor: pointer;
+                background-color: hsl(0, 0%, 85%);
+                border-radius: 50%;
+            }
+        }
+    }
+}
